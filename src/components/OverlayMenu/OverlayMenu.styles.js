@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
-  opacity: ${props => (props.menuOpen ? '1' : '0')};
-  transform: ${props =>
+  opacity: ${(props) => (props.menuOpen ? '1' : '0')};
+  transform: ${(props) =>
     props.menuOpen ? 'translateX(0%)' : 'translateX(-100%)'};
   z-index: 100000;
-  background: #fff;
+  background: #004d40;
   left: 0px;
   padding: 20px;
   transition: all 0.3s ease;
@@ -71,4 +71,4 @@ export const Overlay = styled.div`
       transform: rotate(180deg);
     }
   }
-`;
+`

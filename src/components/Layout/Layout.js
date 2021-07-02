@@ -1,27 +1,27 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import Hamburger from '../Hamburger/Hamburger'
-import { HamburgerButton } from '../Hamburger/Hamburger.styles'
+import OverlayMenu from '../OverlayMenu/OverlayMenu'
+import { GlobalStyles, Primary } from './Layout.styles'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
-import {GlobalStyles, Primary  } from './Layout.styles'
+const Layout = ({ children }) => {
+  const [menuOpen, setMenuOpen] = useState(false)
 
-const Layout= ({children }) => {
-    const [ menuOpen, setMenuOpen ] = useState(false)
+  const handleOverlay = () => {
+    setMenuOpen((prev) => !prev)
+  }
 
-
-    const handleoverlay = () => setMenuOpen(prev => !prev)
-
-    return(
-        <>
-        <GlobalStyles />
-        <Hamburger handleoverlay={handleoverlay}/>
-        <Primary>
-            {children}
-        </Primary>
-        
-        
-        
-        </>
-    )
+  return (
+    <>
+      <GlobalStyles />
+      <Hamburger handleOverlay={handleOverlay} />
+      <OverlayMenu menuOpen={menuOpen} callback={handleOverlay} />
+      <Header />
+      <Primary>{children}</Primary>
+      <Footer />
+    </>
+  )
 }
 
 export default Layout

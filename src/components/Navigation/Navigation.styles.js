@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const NavigationWrapper = styled.nav`
+export const Wrapper = styled.nav`
   font-family: 'Teko', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   color: #212121;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 1px;
   display: none;
@@ -14,7 +14,7 @@ export const NavigationWrapper = styled.nav`
   }
 
   @media (min-width: 992px) {
-    font-size: 0.85rem;
+    font-size: 1.3rem;
     display: block;
   }
 
@@ -34,7 +34,7 @@ export const NavigationWrapper = styled.nav`
       padding: 0 0 0 10px;
       transition: all 0.2s ease;
       text-decoration: none;
-      color: #000;
+      color: #d8e23b;
 
       div {
         margin: -4px 0 0 5px;
@@ -86,4 +86,4 @@ export const NavigationWrapper = styled.nav`
       opacity: 1;
     }
   }
-`;
+`

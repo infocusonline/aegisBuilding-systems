@@ -5,6 +5,7 @@ export const useHeroQuery = () => {
     query HeroQuery {
       wpPage(databaseId: { eq: 2 }) {
         id
+        content
         cta_homepage {
           heroImage {
             localFile {

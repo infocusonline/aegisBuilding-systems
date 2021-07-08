@@ -1,8 +1,8 @@
-import styled from "styled-components"
-import { GatsbyImage } from "gatsby-plugin-image"
+import styled from 'styled-components'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 export const StyledImg = styled(GatsbyImage)`
-  max-height: 600px;
+  max-height: 690px;
   margin-bottom: 60px;
   width: 100%;
 `
@@ -31,5 +31,17 @@ export const HeaderWrapper = styled.div`
     @media screen and (min-width: 768px) {
       font-size: 4rem;
     }
+  }
+`
+
+export const HeaderParagraph = styled.div`
+  margin: 0 auto;
+  text-align: center;
+
+  ul {
+    list-style: none;
+  }
+  li {
+    line-height: 15px;
   }
 `

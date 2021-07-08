@@ -1,15 +1,25 @@
 import React from 'react'
 import { getImage } from 'gatsby-plugin-image'
 import { useHeroQuery } from '../../hooks/useHeroQuery'
-import { Wrapper, HeaderWrapper, StyledImg } from '../Header/Header.styles'
+import { Wrapper, HeaderWrapper, StyledImg } from './Hero.styles'
 
 const Hero = () => {
-  const data = useHeroQuery()
-  console.log(data, 'this data from hero')
+  //   console.log(useHeroQuery(), 'this is the main query')
+  const {
+    wpPage: { cta_homepage },
+  } = useHeroQuery()
+  const imageHere =
+    cta_homepage.heroImage.localFile.childImageSharp.gatsbyImageData
+
+  console.log(imageHere, 'this is CTAHOME')
+
   return (
-    <div>
-      <p>tsting</p>
-    </div>
+    <Wrapper>
+      <StyledImg image={imageHere} alt="Hero Image" />
+      <HeaderWrapper>
+        <h1>.</h1>
+      </HeaderWrapper>
+    </Wrapper>
   )
 }
 

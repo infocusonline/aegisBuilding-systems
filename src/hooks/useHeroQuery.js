@@ -8,8 +8,12 @@ export const useHeroQuery = () => {
         cta_homepage {
           heroImage {
             localFile {
-              childrenImageSharp {
-                gatsbyImageData(width: 1920, placeholder: TRACED_SVG)
+              childImageSharp {
+                gatsbyImageData(
+                  width: 1920
+                  placeholder: TRACED_SVG
+                  layout: FULL_WIDTH
+                )
               }
             }
           }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { Wrapper } from './Navigation.styles'
-import Header from '../Header/Header'
 
 const Navigation = ({ menu }) => {
   return (

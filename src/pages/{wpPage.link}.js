@@ -1,9 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-// COmponents
 import Layout from '../components/Layout/Layout'
 import PageHero from '../components/PageHero/Pagehero'
+import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
+import PageSidebar from '../components/PageSidebar/PageSidebar'
+import CTACustom from '../components/CTACustoms/CTACustom'
 
 const Wrapper = styled.div`
   max-width: 1180px;
@@ -23,8 +25,17 @@ const PageContent = styled.article`
   margin-top: 20px;
 `
 
+const CallToAction = styled.div`
+  border: 1px solid red;
+
+  .flex {
+    display: flex;
+    flex-direction: row;
+  }
+`
+
 const PageTemplate = ({ data }) => {
-  console.log(data, 'data from stuff')
+  console.log(data, 'grab data')
   return (
     <Layout>
       {data.wpPage.featuredImage ? (
@@ -33,11 +44,33 @@ const PageTemplate = ({ data }) => {
             data.wpPage.featuredImage.node.localFile.childImageSharp
               .gatsbyImageData
           }
+          alt="page hero"
         />
       ) : null}
       <Wrapper>
-        <p>sidebar</p>
-        <p>sidebar</p>
+        <BreadCrumb
+          parent={data.wpPage.wpParent && data.wpPage.wpParent.node}
+        />
+        <ContentWrapper>
+          <PageSidebar
+            parentChildren={
+              data.wpPage.wpParent && data.wpPage.wpParent.node.wpChildren.nodes
+            }
+            currentPage={data.wpPage}
+            parent={data.wpPage.wpParent && data.wpPage.wpParent.node.title}
+          >
+            {data.wpPage.children}
+          </PageSidebar>
+          <PageContent>
+            <h1 dangerouslySetInnerHTML={{ __html: data.wpPage.title }} />
+
+            <div dangerouslySetInnerHTML={{ __html: data.wpPage.content }} />
+          </PageContent>
+        </ContentWrapper>
+
+        <CallToAction>
+          <CTACustom />
+        </CallToAction>
       </Wrapper>
     </Layout>
   )
@@ -52,6 +85,21 @@ export const PageQuery = graphql`
       title
       content
       status
+      callToActionBlocks {
+        blockImage1 {
+          title
+          uri
+        }
+        blockImage2 {
+          title
+          uri
+        }
+        blockImage3 {
+          title
+          uri
+        }
+      }
+
       featuredImage {
         node {
           id

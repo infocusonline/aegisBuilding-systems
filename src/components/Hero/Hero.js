@@ -9,7 +9,6 @@ import {
 } from './Hero.styles'
 
 const Hero = () => {
-  console.log(useHeroQuery(), 'this is the main query')
   const {
     wpPage: { cta_homepage },
   } = useHeroQuery()

@@ -1,27 +1,14 @@
 import React from 'react'
+import { StyledImg } from './CTACustom.styles'
 
-const CTACustom = () => {
+const CTACustom = ({ blockImages, title, link, description }) => {
   return (
     <div className="flex">
       <div>
-        <h1>title</h1>
-        <h2>the image</h2>
-        <h3>description about the blocks</h3>
-        <p>the link</p>
-      </div>
+        <h1>{title}</h1>
+        <StyledImg image={blockImages} alt="Hero Image" />
 
-      <div>
-        <h1>title</h1>
-        <h2>the image</h2>
-        <h3>description about the blocks</h3>
-        <p>the link</p>
-      </div>
-
-      <div>
-        <h1>title</h1>
-        <h2>the image</h2>
-        <h3>description about the blocks</h3>
-        <p>the link</p>
+        <p dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </div>
   )

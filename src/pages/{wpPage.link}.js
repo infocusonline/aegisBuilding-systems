@@ -23,6 +23,10 @@ const ContentWrapper = styled.div`
 
 const PageContent = styled.article`
   margin-top: 20px;
+
+  .linkMe {
+    color: red;
+  }
 `
 
 const CallToAction = styled.div`
@@ -69,7 +73,44 @@ const PageTemplate = ({ data }) => {
         </ContentWrapper>
 
         <CallToAction>
-          <CTACustom />
+          {data.wpPage.callToActionBlocks ? (
+            <>
+              <CTACustom
+                title={data.wpPage.callToActionBlocks.blockImage1?.title}
+                blockImages={
+                  data.wpPage.callToActionBlocks.blockImage1?.localFile
+                    .childImageSharp.gatsbyImageData
+                }
+                description={
+                  data.wpPage.callToActionBlocks.blockImage1?.description
+                }
+                link={data.wpPage.callToActionBlocks?.uri}
+              />
+
+              <CTACustom
+                title={data.wpPage.callToActionBlocks.blockImage2?.title}
+                blockImages={
+                  data.wpPage.callToActionBlocks.blockImage2?.localFile
+                    .childImageSharp.gatsbyImageData
+                }
+                description={
+                  data.wpPage.callToActionBlocks.blockImage2?.description
+                }
+                link={data.wpPage.callToActionBlocks?.uri}
+              />
+              <CTACustom
+                title={data.wpPage.callToActionBlocks.blockImage3?.title}
+                blockImages={
+                  data.wpPage.callToActionBlocks.blockImage3?.localFile
+                    .childImageSharp.gatsbyImageData
+                }
+                description={
+                  data.wpPage.callToActionBlocks.blockImage3?.description
+                }
+                link={data.wpPage.callToActionBlocks?.uri}
+              />
+            </>
+          ) : null}
         </CallToAction>
       </Wrapper>
     </Layout>
@@ -87,15 +128,34 @@ export const PageQuery = graphql`
       status
       callToActionBlocks {
         blockImage1 {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 400, placeholder: TRACED_SVG)
+            }
+          }
           title
+          description
+
           uri
         }
         blockImage2 {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 400, placeholder: TRACED_SVG)
+            }
+          }
           title
+          description
           uri
         }
         blockImage3 {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 400, placeholder: TRACED_SVG)
+            }
+          }
           title
+          description
           uri
         }
       }

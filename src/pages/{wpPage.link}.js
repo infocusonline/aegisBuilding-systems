@@ -30,8 +30,6 @@ const PageContent = styled.article`
 `
 
 const CallToAction = styled.div`
-  border: 1px solid red;
-
   .flex {
     display: flex;
     flex-direction: row;
@@ -72,7 +70,7 @@ const PageTemplate = ({ data }) => {
           </PageContent>
         </ContentWrapper>
 
-        <CallToAction>
+        {/* <CallToAction>
           {data.wpPage.callToActionBlocks ? (
             <>
               <CTACustom
@@ -111,7 +109,7 @@ const PageTemplate = ({ data }) => {
               />
             </>
           ) : null}
-        </CallToAction>
+        </CallToAction> */}
       </Wrapper>
     </Layout>
   )

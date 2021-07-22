@@ -24,7 +24,7 @@ const ContentWrapper = styled.div`
 const PageContent = styled.article`
   margin-top: 20px;
 
-  .linkMe {
+  p .buildingLink {
     color: red;
   }
 `

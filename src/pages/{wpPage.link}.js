@@ -24,8 +24,12 @@ const ContentWrapper = styled.div`
 const PageContent = styled.article`
   margin-top: 20px;
 
+  figcaption a {
+    color: #004d41;
+  }
+
   p .buildingLink {
-    color: red;
+    color: #004d41;
   }
 `
 

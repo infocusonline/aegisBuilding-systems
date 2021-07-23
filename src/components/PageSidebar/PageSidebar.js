@@ -13,7 +13,6 @@ const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
       ) : (
         <div>Menu</div>
       )}
-      page side bar
     </Wrapper>
   )
 }

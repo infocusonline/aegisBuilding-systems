@@ -62,7 +62,7 @@ export const Wrapper = styled.nav`
     margin: 0;
     top: 30px;
     text-transform: none;
-    background: #fff;
+    background: #212121;
     padding: 15px 10px 10px 10px;
     box-shadow: 0px 6px 23px -10px rgba(0, 0, 0, 0.5);
   }

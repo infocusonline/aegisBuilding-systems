@@ -11,7 +11,7 @@ const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
       {children?.nodes.length === 0 && !parent ? (
         <SidebarMessage />
       ) : (
-        <div>Menu</div>
+        <div></div>
       )}
     </Wrapper>
   )

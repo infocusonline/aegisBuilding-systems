@@ -7,6 +7,7 @@ import Navigation from '../Navigation/Navigation'
 
 const Header = () => {
   const { site, wpMenu } = useMenuQuery()
+  console.log(wpMenu, 'menu items')
 
   return (
     <Wrapper>

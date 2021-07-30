@@ -31,6 +31,10 @@ export const HeaderWrapper = styled.div`
     @media screen and (min-width: 768px) {
       font-size: 4rem;
     }
+
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
   }
 `
 

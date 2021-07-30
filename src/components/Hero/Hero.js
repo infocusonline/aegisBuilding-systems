@@ -21,7 +21,7 @@ const Hero = () => {
     <Wrapper>
       <StyledImg image={image} alt="Hero Image" />
       <HeaderWrapper>
-        <p>Aegis Building Systems</p>
+        <h1>Aegis Building Systems</h1>
       </HeaderWrapper>
 
       <HeaderParagraph

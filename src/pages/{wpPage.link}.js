@@ -5,7 +5,6 @@ import Layout from '../components/Layout/Layout'
 import PageHero from '../components/PageHero/Pagehero'
 import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
 import PageSidebar from '../components/PageSidebar/PageSidebar'
-import CTACustom from '../components/CTACustoms/CTACustom'
 
 const Wrapper = styled.div`
   max-width: 1180px;
@@ -41,13 +40,12 @@ const CallToAction = styled.div`
 `
 
 const PageTemplate = ({ data }) => {
-  console.log(data, 'grab data')
   return (
     <Layout>
       {data.wpPage.featuredImage ? (
         <PageHero
           img={
-            data.wpPage.featuredImage.node.localFile.childImageSharp
+            data.wpPage.featuredImage.node?.localFile.childImageSharp
               .gatsbyImageData
           }
           alt="page hero"
@@ -73,47 +71,6 @@ const PageTemplate = ({ data }) => {
             <div dangerouslySetInnerHTML={{ __html: data.wpPage.content }} />
           </PageContent>
         </ContentWrapper>
-
-        {/* <CallToAction>
-          {data.wpPage.callToActionBlocks ? (
-            <>
-              <CTACustom
-                title={data.wpPage.callToActionBlocks.blockImage1?.title}
-                blockImages={
-                  data.wpPage.callToActionBlocks.blockImage1?.localFile
-                    .childImageSharp.gatsbyImageData
-                }
-                description={
-                  data.wpPage.callToActionBlocks.blockImage1?.description
-                }
-                link={data.wpPage.callToActionBlocks?.uri}
-              />
-
-              <CTACustom
-                title={data.wpPage.callToActionBlocks.blockImage2?.title}
-                blockImages={
-                  data.wpPage.callToActionBlocks.blockImage2?.localFile
-                    .childImageSharp.gatsbyImageData
-                }
-                description={
-                  data.wpPage.callToActionBlocks.blockImage2?.description
-                }
-                link={data.wpPage.callToActionBlocks?.uri}
-              />
-              <CTACustom
-                title={data.wpPage.callToActionBlocks.blockImage3?.title}
-                blockImages={
-                  data.wpPage.callToActionBlocks.blockImage3?.localFile
-                    .childImageSharp.gatsbyImageData
-                }
-                description={
-                  data.wpPage.callToActionBlocks.blockImage3?.description
-                }
-                link={data.wpPage.callToActionBlocks?.uri}
-              />
-            </>
-          ) : null}
-        </CallToAction> */}
       </Wrapper>
     </Layout>
   )
